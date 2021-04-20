@@ -27,7 +27,7 @@ function App() {
           {/* history (navigating), match (access params), location (url info) */}
           <Route exact path="/protected" component={GasPrices} />
           <Route path="/login" component={Login} />
-          <Route render={Login} />
+          <Route render={(props) => <Login {...props} />} />
         </Switch>
       </div>
     </Router>
