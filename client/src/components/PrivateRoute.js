@@ -7,14 +7,15 @@ import { Route, Redirect } from "react-router-dom";
 // if they are, render the component that was passed in
 // if not, redirect user to "/login"
 
-function PrivateRoute(props) {
+// rest operator
+function PrivateRoute({ component, ...rest }) {
   return (
     <Route
-      {...props}
+      {...rest}
       render={() => {
         if (window.localStorage.getItem("token")) {
           console.log("im here");
-          return; // the component passed in through props
+          return <component />; // the component passed in through props
         } else {
           console.log("in the else");
           return <Redirect to="/login" />;
