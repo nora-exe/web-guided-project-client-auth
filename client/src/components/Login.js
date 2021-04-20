@@ -1,25 +1,26 @@
-import React from 'react';
-import axios from 'axios';
+import React from "react";
+import axios from "axios";
 
 class Login extends React.Component {
   state = {
     credentials: {
-      username: '',
-      password: ''
-    }
+      username: "",
+      password: "",
+    },
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({
       credentials: {
         ...this.state.credentials,
-        [e.target.name]: e.target.value
-      }
+        [e.target.name]: e.target.value,
+      },
     });
   };
 
-  login = e => {
+  login = (e) => {
     e.preventDefault();
+    // make a POST request with the username and password as the data body
   };
 
   render() {
