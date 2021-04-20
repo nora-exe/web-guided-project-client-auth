@@ -19,6 +19,7 @@ class GasPrices extends React.Component {
       .get("/api/data")
       .then((res) => {
         // res.data.data
+        console.log(res);
         this.setState({
           gasPrices: res.data.data
             .filter(
