@@ -24,9 +24,10 @@ function App() {
           </li>
         </ul>
         <Switch>
+          {/* history (navigating), match (access params), location (url info) */}
           <Route exact path="/protected" component={GasPrices} />
           <Route path="/login" component={Login} />
-          <Route component={Login} />
+          <Route render={Login} />
         </Switch>
       </div>
     </Router>
