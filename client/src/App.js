@@ -28,11 +28,13 @@ function App() {
           </li>
           <li>
             <Link to="/protected">Protected Page</Link>
+            <Link to="/anakin">Pod Racing</Link>
           </li>
         </ul>
         <Switch>
           {/* history (navigating), match (access params), location (url info) */}
           <PrivateRoute exact path="/protected" component={GasPrices} />
+          <PrivateRoute path="/anakin" component={NewRoute} />
           <Route path="/login" component={Login} />
           <Route render={(props) => <Login {...props} />} />
         </Switch>
