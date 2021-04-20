@@ -26,7 +26,7 @@ class GasPrices extends React.Component {
               (price) =>
                 price.location === "US" || price.location === "State of Hawaii"
             )
-            .filter((price) => price.type === "Gasoline"),
+            .filter((price) => price.type === "Gasoline - Regular"),
         });
       })
       .catch((err) => console.log(err.response.data.error));
