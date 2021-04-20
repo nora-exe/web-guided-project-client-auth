@@ -13,8 +13,10 @@ function PrivateRoute(props) {
       {...props}
       render={() => {
         if (window.localStorage.getItem("token")) {
+          console.log("im here");
           return; // the component passed in through props
         } else {
+          console.log("in the else");
           return <Redirect to="/login" />;
         }
       }}
