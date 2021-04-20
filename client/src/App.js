@@ -7,7 +7,9 @@ import GasPrices from "./components/GasPrices";
 import axios from "axios";
 
 function App() {
-  const logout = () => {};
+  const logout = () => {
+    window.localStorage.removeItem("token");
+  };
 
   return (
     <Router>
