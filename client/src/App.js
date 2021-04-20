@@ -8,6 +8,7 @@ import axios from "axios";
 
 function App() {
   const logout = () => {
+    // request to /api/logout
     window.localStorage.removeItem("token");
   };
 
