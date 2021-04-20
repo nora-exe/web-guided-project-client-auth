@@ -17,7 +17,17 @@ class GasPrices extends React.Component {
   getData = () => {
     axiosWithAuth()
       .get("/api/data")
-      .then((res) => console.log(res))
+      .then((res) => {
+        // res.data.data
+        this.setState({
+          gasPrices: res.data.data
+            .filter(
+              (price) =>
+                price.location === "US" || price.location === "State of Hawaii"
+            )
+            .filter((price) => price.type === "Gasoline"),
+        });
+      })
       .catch((err) => console.log(err.response.data.error));
   };
 
