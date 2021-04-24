@@ -4,11 +4,14 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Login from './components/Login';
 import GasPrices from './components/GasPrices';
 
+import PrivateRoute from './components/PrivateRoute';
+
 import axios from 'axios';
 
 function App() {
   const logout = () => {
-    
+    window.localStorage.removeItem('token');
+    //TODO req to /api/logout to let server know logged out
   };
 
 
@@ -27,9 +30,9 @@ function App() {
           </li>
         </ul>
         <Switch>
-          <Route exact path="/protected" component={GasPrices} />
+          <PrivateRoute exact path="/protected" component={GasPrices} />
           <Route path="/login" component={Login} />
-          <Route component={Login} />
+          <Route render={(props) => <Login { ...props } />} />
         </Switch>
       </div>
     </Router>
