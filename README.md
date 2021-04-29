@@ -165,4 +165,8 @@ export default Login;
 * LOGIN ⚙ user/pass sent login request ➡ server search db for user/pass ➡ if found, generate/store/return token ➡ receive/store token
 * REQUEST ⚙ user sends request body/token ➡ server searches for active token ➡ if found, process/return request  ➡ client receives/processes req
 * LOGOUT ⚙ user del local token, sends token to server ➡ server deletes token 
-* 
+
+## MP
+🎥https://www.loom.com/share/c669f5e7831741aaac192d50830735c0
+
+⚙ https://github.com/nora-exe/web-module-project-client-auth?organization=nora-exe&organization=nora-exe
